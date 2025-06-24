@@ -72,6 +72,12 @@ def marcar_comprado():
     try:
         numero = int(input("Digite o numero da produto para marcar como realizado: "))
         indice = numero - 1
+        while True:
+            if numero==0:
+                print("Numero invalido!\n")
+                numero = int(input("Digite o numero da produto para marcar como realizado: "))
+            else:
+                break
         if numero <= len(lista_compras):
             lista_compras[indice]["status"] = True
             print("O status do produto foi mundado com sucesso!✔\n")
